@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAHS Football Scoreboard</title>
+    <style>
+        /* 1. Basic Page Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000; /* Sets background to Black */
+            font-family: Arial, sans-serif;
+        }
+
+        /* 2. Container to center the widget on large screens */
+        .scoreboard-container {
+            width: 100%;
+            max-width: 800px; /* Keeps it from getting too stretched on desktop */
+            margin: 0 auto;   /* Centers the container */
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scoreboard-container">
+        <div class="scorestream-widget-container" 
+             data-ss_widget_type="vertScoreboard" 
+             style="height:4600px;" 
+             data-user-widget-id="58320">
+        </div>
+        <script async="async" type="text/javascript" src="https://scorestream.com/apiJsCdn/widgets/embed.js"></script>
+        </div>
+
+</body>
+</html>
