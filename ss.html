@@ -5,29 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAHS Football Scoreboard</title>
     <style>
+        /* 1. Page Layout (Flexbox) */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%; /* Ensures the body fills the screen */
+            height: 100%;
             background-color: #000000;
             font-family: Arial, sans-serif;
-            overflow: hidden; /* Prevents the main page from having double scrollbars */
+            
+            /* This makes the page act like an app with a fixed top and scrolling bottom */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; 
         }
 
+        /* 2. The Header Button Area */
+        .nav-header {
+            flex: 0 0 auto; /* Don't grow or shrink */
+            padding: 15px;
+            text-align: center;
+            background-color: #111; /* Slightly lighter black for contrast */
+            border-bottom: 2px solid #333;
+            z-index: 10;
+        }
+
+        /* 3. The Button Styling */
+        .home-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #000000;
+            background-color: #ffffff;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.2s;
+            text-transform: uppercase;
+        }
+
+        .home-btn:hover {
+            background-color: #cccccc;
+        }
+
+        /* 4. The Scoreboard Scroll Area */
         .scoreboard-container {
+            flex: 1 1 auto; /* Take up all remaining space */
             width: 100%;
             max-width: 800px;
-            margin: 0 auto;
-            
-            /* THIS IS THE MAGIC PART */
-            height: 100vh; /* 100% of the viewport height */
-            overflow-y: auto; /* Adds a scrollbar ONLY if the list is longer than the screen */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iPhones */
+            margin: 0 auto; /* Center horizontally */
+            overflow-y: auto; /* Scroll ONLY this part */
+            -webkit-overflow-scrolling: touch; /* Smooth scroll on mobile */
         }
     </style>
 </head>
 <body>
+
+    <div class="nav-header">
+        <a href="https://www.pahsfootball.com" class="home-btn" target="_top">
+            &larr; Return to Home
+        </a>
+    </div>
 
     <div class="scoreboard-container">
         <div class="scorestream-widget-container" 
