@@ -23,7 +23,7 @@
         /* 2. The Fixed Header Section (Banner + Button) */
         .fixed-header {
             flex: 0 0 auto; /* Do not grow or shrink */
-            background-color: #000; /* Match background */
+            background-color: #000; 
             text-align: center;
             z-index: 10;
             border-bottom: 2px solid #333;
@@ -47,18 +47,24 @@
         .home-btn {
             display: inline-block;
             text-decoration: none;
-            color: #000000;
-            background-color: #ffffff;
+            
+            /* --- COLOR SETTINGS --- */
+            background-color: #FFD700; /* Athletic Gold */
+            color: #000000;            /* Black Text */
+            /* ---------------------- */
+
             padding: 8px 20px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 14px; /* Slightly smaller to save space */
+            font-size: 14px;
             transition: background-color 0.2s;
             text-transform: uppercase;
+            border: 1px solid #b89a00; /* Subtle darker gold border */
         }
 
         .home-btn:hover {
-            background-color: #cccccc;
+            background-color: #ffea00; /* Brighter yellow on hover */
+            cursor: pointer;
         }
 
         /* 5. The Scrollable Scoreboard Area */
