@@ -14,32 +14,45 @@
             background-color: #000000;
             font-family: Arial, sans-serif;
             
-            /* This makes the page act like an app with a fixed top and scrolling bottom */
+            /* Keeps header fixed, body scrolls */
             display: flex;
             flex-direction: column;
             overflow: hidden; 
         }
 
-        /* 2. The Header Button Area */
-        .nav-header {
-            flex: 0 0 auto; /* Don't grow or shrink */
-            padding: 15px;
+        /* 2. The Fixed Header Section (Banner + Button) */
+        .fixed-header {
+            flex: 0 0 auto; /* Do not grow or shrink */
+            background-color: #000; /* Match background */
             text-align: center;
-            background-color: #111; /* Slightly lighter black for contrast */
-            border-bottom: 2px solid #333;
             z-index: 10;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
         }
 
-        /* 3. The Button Styling */
+        /* 3. Banner Image Styling */
+        .header-banner {
+            width: 100%;
+            max-width: 800px; /* Matches widget width */
+            height: auto;     /* Maintains aspect ratio */
+            display: block;
+            margin: 0 auto;   /* Centers the image */
+        }
+
+        /* 4. Home Button Styling */
+        .home-btn-container {
+            padding-top: 10px;
+        }
+
         .home-btn {
             display: inline-block;
             text-decoration: none;
             color: #000000;
             background-color: #ffffff;
-            padding: 10px 25px;
-            border-radius: 5px;
+            padding: 8px 20px;
+            border-radius: 4px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 14px; /* Slightly smaller to save space */
             transition: background-color 0.2s;
             text-transform: uppercase;
         }
@@ -48,12 +61,12 @@
             background-color: #cccccc;
         }
 
-        /* 4. The Scoreboard Scroll Area */
+        /* 5. The Scrollable Scoreboard Area */
         .scoreboard-container {
-            flex: 1 1 auto; /* Take up all remaining space */
+            flex: 1 1 auto; /* Fill remaining vertical space */
             width: 100%;
             max-width: 800px;
-            margin: 0 auto; /* Center horizontally */
+            margin: 0 auto;
             overflow-y: auto; /* Scroll ONLY this part */
             -webkit-overflow-scrolling: touch; /* Smooth scroll on mobile */
         }
@@ -61,10 +74,14 @@
 </head>
 <body>
 
-    <div class="nav-header">
-        <a href="https://www.pahsfootball.com" class="home-btn" target="_top">
-            &larr; Return to Home
-        </a>
+    <div class="fixed-header">
+        <img src="pahsfootballbanner.png" alt="PAHS Football Banner" class="header-banner">
+        
+        <div class="home-btn-container">
+            <a href="https://www.pahsfootball.com" class="home-btn" target="_top">
+                &larr; Return to Home
+            </a>
+        </div>
     </div>
 
     <div class="scoreboard-container">
