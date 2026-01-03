@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAHS Football Scoreboard</title>
     <style>
-        /* 1. Basic Page Reset */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
-            background-color: #000000; /* Sets background to Black */
+            height: 100%; /* Ensures the body fills the screen */
+            background-color: #000000;
             font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevents the main page from having double scrollbars */
         }
 
-        /* 2. Container to center the widget on large screens */
         .scoreboard-container {
             width: 100%;
-            max-width: 800px; /* Keeps it from getting too stretched on desktop */
-            margin: 0 auto;   /* Centers the container */
-            padding-top: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            
+            /* THIS IS THE MAGIC PART */
+            height: 100vh; /* 100% of the viewport height */
+            overflow-y: auto; /* Adds a scrollbar ONLY if the list is longer than the screen */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iPhones */
         }
     </style>
 </head>
@@ -29,11 +32,10 @@
     <div class="scoreboard-container">
         <div class="scorestream-widget-container" 
              data-ss_widget_type="vertScoreboard" 
-             style="height:4600px;" 
              data-user-widget-id="58320">
         </div>
         <script async="async" type="text/javascript" src="https://scorestream.com/apiJsCdn/widgets/embed.js"></script>
-        </div>
+    </div>
 
 </body>
 </html>
